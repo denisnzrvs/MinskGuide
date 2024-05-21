@@ -1,0 +1,6 @@
+framework module Pods_MinskGuide {
+  umbrella header "Pods-MinskGuide-umbrella.h"
+
+  export *
+  module * { export * }
+}
