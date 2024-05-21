@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		AED8F0C481D39E4FA26C02F8 /* Pods_MinskGuide.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC5BEB72BA6D63C6EB24A6E6 /* Pods_MinskGuide.framework */; };
 		F10D925D2BF24E1D005B2E06 /* MinskGuideApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10D925C2BF24E1D005B2E06 /* MinskGuideApp.swift */; };
 		F10D92612BF24E25005B2E06 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F10D92602BF24E25005B2E06 /* Assets.xcassets */; };
 		F10D92642BF24E25005B2E06 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F10D92632BF24E25005B2E06 /* Preview Assets.xcassets */; };
@@ -23,9 +22,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0A0EFA19FA45FA9ED2921D41 /* Pods-MinskGuide.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MinskGuide.debug.xcconfig"; path = "Target Support Files/Pods-MinskGuide/Pods-MinskGuide.debug.xcconfig"; sourceTree = "<group>"; };
-		28F86B7320B4156054B8C3A4 /* Pods-MinskGuide.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MinskGuide.release.xcconfig"; path = "Target Support Files/Pods-MinskGuide/Pods-MinskGuide.release.xcconfig"; sourceTree = "<group>"; };
-		CC5BEB72BA6D63C6EB24A6E6 /* Pods_MinskGuide.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MinskGuide.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F10D92592BF24E1D005B2E06 /* MinskGuide.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MinskGuide.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F10D925C2BF24E1D005B2E06 /* MinskGuideApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinskGuideApp.swift; sourceTree = "<group>"; };
 		F10D92602BF24E25005B2E06 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -46,38 +42,17 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AED8F0C481D39E4FA26C02F8 /* Pods_MinskGuide.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		03828A3CECD2C9AF3BEDB895 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				0A0EFA19FA45FA9ED2921D41 /* Pods-MinskGuide.debug.xcconfig */,
-				28F86B7320B4156054B8C3A4 /* Pods-MinskGuide.release.xcconfig */,
-			);
-			name = Pods;
-			path = Pods;
-			sourceTree = "<group>";
-		};
-		EACD831E38740AB7D0D9BAE9 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				CC5BEB72BA6D63C6EB24A6E6 /* Pods_MinskGuide.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		F10D92502BF24E1D005B2E06 = {
 			isa = PBXGroup;
 			children = (
 				F10D925B2BF24E1D005B2E06 /* MinskGuide */,
 				F10D925A2BF24E1D005B2E06 /* Products */,
-				03828A3CECD2C9AF3BEDB895 /* Pods */,
-				EACD831E38740AB7D0D9BAE9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -203,11 +178,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F10D92672BF24E25005B2E06 /* Build configuration list for PBXNativeTarget "MinskGuide" */;
 			buildPhases = (
-				FC15AC53D299CB32BE736EA0 /* [CP] Check Pods Manifest.lock */,
 				F10D92552BF24E1D005B2E06 /* Sources */,
 				F10D92562BF24E1D005B2E06 /* Frameworks */,
 				F10D92572BF24E1D005B2E06 /* Resources */,
-				9E6FB6DED6B424713E6CE076 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -262,48 +235,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		9E6FB6DED6B424713E6CE076 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-MinskGuide/Pods-MinskGuide-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-MinskGuide/Pods-MinskGuide-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MinskGuide/Pods-MinskGuide-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		FC15AC53D299CB32BE736EA0 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-MinskGuide-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		F10D92552BF24E1D005B2E06 /* Sources */ = {
@@ -447,7 +378,6 @@
 		};
 		F10D92682BF24E25005B2E06 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0A0EFA19FA45FA9ED2921D41 /* Pods-MinskGuide.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -477,7 +407,6 @@
 		};
 		F10D92692BF24E25005B2E06 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 28F86B7320B4156054B8C3A4 /* Pods-MinskGuide.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
