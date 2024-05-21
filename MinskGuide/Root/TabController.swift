@@ -18,5 +18,5 @@ enum Tab {
     case home
     case favorites
     case settings
-    case geos
+    case search
 }

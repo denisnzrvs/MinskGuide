@@ -14,13 +14,16 @@ struct RootView: View {
         TabView(selection: $tabController.activeTab) {
             HomeView()
                 .tag(Tab.home)
-                .tabItem { Label("Home", systemImage: "person.fill") }
+                .tabItem { Label("Home", systemImage: "house") }
+            SearchView()
+                .tag(Tab.search)
+                .tabItem {Label("Search", systemImage: "magnifyingglass" ) }
             FavoritesView()
                 .tag(Tab.favorites)
-                .tabItem { Label("Favorites", systemImage: "photo") }
+                .tabItem { Label("Favorites", systemImage: "star") }
             SettingsView()
                 .tag(Tab.settings)
-                .tabItem { Label("Settings", systemImage: "video.fill")}
+                .tabItem { Label("Settings", systemImage: "gearshape")}
         }
     }
 }
