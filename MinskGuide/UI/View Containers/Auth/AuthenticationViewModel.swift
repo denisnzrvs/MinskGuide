@@ -4,12 +4,12 @@
 //
 //  Created by Denis Nazarovs on 22/05/2024.
 //
-
 import Foundation
 import FirebaseCore
 import FirebaseAuth
 import GoogleSignIn
 import GoogleSignInSwift
+import SwiftUI
 
 enum AuthenticationState {
     case unauthenticated
@@ -71,8 +71,7 @@ class AuthenticationViewModel: ObservableObject {
             print("Wait")
             try await Task.sleep(nanoseconds: 1_000_000_000)
             print("Done")
-        }
-        catch { }
+        } catch { }
     }
     
     func reset() {
@@ -89,8 +88,7 @@ extension AuthenticationViewModel {
         do {
             try await Auth.auth().signIn(withEmail: self.email, password: self.password)
             return true
-        }
-        catch  {
+        } catch  {
             print(error)
             errorMessage = error.localizedDescription
             authenticationState = .unauthenticated
@@ -103,8 +101,7 @@ extension AuthenticationViewModel {
         do  {
             try await Auth.auth().createUser(withEmail: email, password: password)
             return true
-        }
-        catch {
+        } catch {
             print(error)
             errorMessage = error.localizedDescription
             authenticationState = .unauthenticated
@@ -115,8 +112,7 @@ extension AuthenticationViewModel {
     func signOut() {
         do {
             try Auth.auth().signOut()
-        }
-        catch {
+        } catch {
             print(error)
             errorMessage = error.localizedDescription
         }
@@ -126,8 +122,7 @@ extension AuthenticationViewModel {
         do {
             try await user?.delete()
             return true
-        }
-        catch {
+        } catch {
             errorMessage = error.localizedDescription
             return false
         }
@@ -166,11 +161,15 @@ extension AuthenticationViewModel {
             let result = try await Auth.auth().signIn(with: credential)
             let firebaseUser = result.user
             print("User \(firebaseUser.uid) signed in with email \(firebaseUser.email ?? "unknown")")
+            
+            // Update state after successful sign-in
+            self.user = firebaseUser
+            self.authenticationState = .authenticated
             return true
-        }
-        catch {
+        } catch {
             print(error.localizedDescription)
             self.errorMessage = error.localizedDescription
+            self.authenticationState = .unauthenticated
             return false
         }
     }
