@@ -8,13 +8,23 @@
 import SwiftUI
 
 struct SettingsView: View {
+    @StateObject private var authViewModel = AuthenticationViewModel()
+    
     var body: some View {
         NavigationStack() {
-            Text("Hello")
+            VStack() {
+            
+                    UserProfileView()
+                }
+            
             .navigationTitle("Settings")
         }
         
+        .onAppear {
+            authViewModel.registerAuthStateHandler()
+        }
     }
+    
 }
 
 #Preview {

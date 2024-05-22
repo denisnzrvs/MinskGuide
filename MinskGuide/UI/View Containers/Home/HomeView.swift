@@ -6,23 +6,21 @@
 import SwiftUI
 
 struct HomeView: View {
-    @Environment(\.colorScheme) var colorScheme
     @StateObject var viewModel = AuthenticationViewModel()
     
     var body: some View {
         NavigationStack {
-            VStack {
-                Text("Hello")
-                    .navigationTitle("Home")
-                
-                if viewModel.authenticationState == .unauthenticated {
+            if viewModel.authenticationState == .unauthenticated {
+                VStack {
+                    Spacer()
                     LoginView(viewModel: viewModel)
-                } else {
-                    AuthenticatedView {
-                        // Custom content for authenticated users
-                        Text("Welcome! You are logged in.")
-                    }
+                    Spacer()
                 }
+            } else {
+                VStack {
+                    Text("Welcome! You are logged in.")
+                }
+                .navigationTitle("Home")
             }
         }
         .onAppear {
@@ -34,3 +32,5 @@ struct HomeView: View {
 #Preview {
     HomeView()
 }
+
+

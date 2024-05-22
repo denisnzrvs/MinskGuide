@@ -9,25 +9,36 @@ import SwiftUI
 
 struct RootView: View {
     @StateObject private var tabController = TabController()
+    @StateObject private var authViewModel =  AuthenticationViewModel()
     
     var body: some View {
-        TabView(selection: $tabController.activeTab) {
-            HomeView()
-                .tag(Tab.home)
-                .tabItem { Label("Home", systemImage: "house") }
-            SearchView()
-                .tag(Tab.search)
-                .tabItem {Label("Search", systemImage: "magnifyingglass" ) }
-            FavoritesView()
-                .tag(Tab.favorites)
-                .tabItem { Label("Favorites", systemImage: "star") }
-            SettingsView()
-                .tag(Tab.settings)
-                .tabItem { Label("Settings", systemImage: "gearshape")}
+        Group {
+            if authViewModel.authenticationState == .authenticated {
+                TabView(selection: $tabController.activeTab) {
+                    HomeView()
+                        .tag(Tab.home)
+                        .tabItem { Label("Home", systemImage: "house") }
+                    SearchView()
+                        .tag(Tab.search)
+                        .tabItem { Label("Search", systemImage: "magnifyingglass") }
+                    FavoritesView()
+                        .tag(Tab.favorites)
+                        .tabItem { Label("Favorites", systemImage: "star") }
+                    SettingsView()
+                        .tag(Tab.settings)
+                        .tabItem { Label("Settings", systemImage: "gearshape") }
+                }
+            } else {
+                LoginView(viewModel: authViewModel)
+            }
+        }
+        .onAppear {
+            authViewModel.registerAuthStateHandler()
         }
     }
 }
 
 #Preview {
     RootView()
+        .environmentObject(AuthenticationViewModel()) // Provide a mock authViewModel for preview
 }

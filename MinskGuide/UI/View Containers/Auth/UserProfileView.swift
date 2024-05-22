@@ -9,7 +9,7 @@ import SwiftUI
 import FirebaseAnalyticsSwift
 
 struct UserProfileView: View {
-    @EnvironmentObject var viewModel: AuthenticationViewModel
+    @StateObject var viewModel = AuthenticationViewModel()
     @Environment(\.dismiss) var dismiss
     @State var presentingConfirmationDialog = false
     
