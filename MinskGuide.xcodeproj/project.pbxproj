@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		659E6F482C0004B20079518F /* UIStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659E6F472C0004B20079518F /* UIStyle.swift */; };
 		F10D925D2BF24E1D005B2E06 /* MinskGuideApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10D925C2BF24E1D005B2E06 /* MinskGuideApp.swift */; };
 		F10D92612BF24E25005B2E06 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F10D92602BF24E25005B2E06 /* Assets.xcassets */; };
 		F10D92642BF24E25005B2E06 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F10D92632BF24E25005B2E06 /* Preview Assets.xcassets */; };
@@ -35,6 +36,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		659E6F472C0004B20079518F /* UIStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStyle.swift; sourceTree = "<group>"; };
 		F10D92592BF24E1D005B2E06 /* MinskGuide.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MinskGuide.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F10D925C2BF24E1D005B2E06 /* MinskGuideApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinskGuideApp.swift; sourceTree = "<group>"; };
 		F10D92602BF24E25005B2E06 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -142,6 +144,7 @@
 			children = (
 				F1DE99222BFCE0290041843C /* View Components */,
 				F1E571D72BFB9E7C00B1D36A /* View Containers */,
+				659E6F472C0004B20079518F /* UIStyle.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -306,6 +309,7 @@
 				F1E599B12BFDEC6300104F83 /* LoginView.swift in Sources */,
 				F1E571DD2BFB9EC200B1D36A /* HomeView.swift in Sources */,
 				F1E571E42BFBB4AB00B1D36A /* UserRepository.swift in Sources */,
+				659E6F482C0004B20079518F /* UIStyle.swift in Sources */,
 				F1E571E62BFBB4C400B1D36A /* PlacesRepository.swift in Sources */,
 				F1E571E92BFBB4EC00B1D36A /* User.swift in Sources */,
 				F1E599B32BFDECB500104F83 /* AuthenticationViewModel.swift in Sources */,
