@@ -1,36 +1,33 @@
-//  HomeView.swift
-//  MinskGuide
-//
-//  Created by Denis Nazarovs on 20/05/2024.
-//
 import SwiftUI
 
 struct HomeView: View {
     @StateObject var viewModel = AuthenticationViewModel()
+    @StateObject var homeViewModel = HomeViewModel()
+
     
     var body: some View {
         NavigationStack {
-            if viewModel.authenticationState == .unauthenticated {
-                VStack {
+            VStack {
+                if viewModel.authenticationState == .unauthenticated {
                     Spacer()
                     LoginView(viewModel: viewModel)
                     Spacer()
-                }
-            } else {
-                VStack {
+                } else {
                     Text("Welcome! You are logged in.")
+                    
                 }
-                .navigationTitle("Home")
             }
-        }
-        .onAppear {
-            viewModel.registerAuthStateHandler()
+            .navigationTitle("Home")
+            .onAppear {
+                viewModel.registerAuthStateHandler()
+                homeViewModel.loadData()
+            }
         }
     }
 }
 
-#Preview {
-    HomeView()
+struct HomeView_Previews: PreviewProvider {
+    static var previews: some View {
+        HomeView()
+    }
 }
-
-
