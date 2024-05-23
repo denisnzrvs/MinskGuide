@@ -5,13 +5,13 @@ struct HomeView: View {
     
     var body: some View {
         NavigationStack {
-            VStack {
+            VStack(spacing: 0) { // Set spacing to 0 to remove any extra space
                 // Displaying the HeroBanner image
                 Image("HeroBanner")
                     .resizable()
                     .aspectRatio(contentMode: .fill)
                     .frame(height: 200)
-                    .ignoresSafeArea()
+                    .clipped() // Ensure the image is clipped to its frame
                 
                 if !viewModel.places.isEmpty {
                     List {
@@ -28,14 +28,18 @@ struct HomeView: View {
                             Text("Shops")
                         }
                     }
+                    .padding(.top, -8) // Adjust top padding to remove extra space
                 } else if let errorMessage = viewModel.errorMessage {
                     Text(errorMessage)
                         .foregroundColor(.red)
+                        .padding()
                 } else {
                     ProgressView()
                         .progressViewStyle(CircularProgressViewStyle())
+                        .padding()
                 }
             }
+            .edgesIgnoringSafeArea([.top, .bottom]) // Ignore safe area for the bottom edge
         }
     }
 }
