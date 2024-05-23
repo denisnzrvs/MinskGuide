@@ -5,6 +5,10 @@ class HomeViewModel: ObservableObject {
     
     private var placesRepo = PlacesRepository()
     @Published var places: [Place] = []
+    @Published var restaurants: [Place] = []
+    @Published var museums: [Place] = []
+    @Published var hotels: [Place] = []
+    @Published var shops: [Place] = []
     @Published var errorMessage: String?
     
     init() {
@@ -36,6 +40,7 @@ class HomeViewModel: ObservableObject {
                                    let recommendation = restaurant["recommendation"] as? String {
                                     
                                     let place = Place(id: id, name: name, address: address, latitude: latitude, longitude: longitude, recommendation: recommendation)
+                                    self.restaurants.append(place)
                                     placesArray.append(place)
                                 }
                             }
@@ -52,6 +57,7 @@ class HomeViewModel: ObservableObject {
                                    let recommendation = museum["recommendation"] as? String {
                                     
                                     let place = Place(id: id, name: name, address: address, latitude: latitude, longitude: longitude, recommendation: recommendation)
+                                    self.museums.append(place)
                                     placesArray.append(place)
                                 }
                             }
@@ -68,6 +74,7 @@ class HomeViewModel: ObservableObject {
                                    let recommendation = hotel["recommendation"] as? String {
                                     
                                     let place = Place(id: id, name: name, address: address, latitude: latitude, longitude: longitude, recommendation: recommendation)
+                                    self.hotels.append(place)
                                     placesArray.append(place)
                                 }
                             }
@@ -84,12 +91,13 @@ class HomeViewModel: ObservableObject {
                                    let recommendation = shop["recommendation"] as? String {
                                     
                                     let place = Place(id: id, name: name, address: address, latitude: latitude, longitude: longitude, recommendation: recommendation)
+                                    self.shops.append(place)
                                     placesArray.append(place)
                                 }
                             }
                         }
                         
-                        // Store places
+                        // Store all places
                         DispatchQueue.main.async {
                             self.places = placesArray
                             self.errorMessage = nil

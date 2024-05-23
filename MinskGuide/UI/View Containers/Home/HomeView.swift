@@ -7,18 +7,20 @@ struct HomeView: View {
         NavigationStack {
             VStack {
                 if !viewModel.places.isEmpty {
-                    List(viewModel.places) { place in
-                        VStack(alignment: .leading) {
-                            Text(place.name)
-                                .font(.headline)
-                            Text(place.address)
-                                .foregroundColor(.secondary)
-                            Text(place.recommendation)
-                                .foregroundColor(.secondary)
-                                .font(.footnote)
-                                .padding(.top, 4)
+                    List {
+                        NavigationLink(destination: PlaceListView(placeType: viewModel.restaurants, title: "Restaurants")) {
+                            Text("Restaurants")
                         }
-                        .padding(.vertical, 8)
+                        NavigationLink(destination: PlaceListView(placeType: viewModel.museums, title: "Museums")) {
+                            Text("Museums")
+                        }
+                        NavigationLink(destination: PlaceListView(placeType: viewModel.hotels, title: "Hotels")) {
+                            Text("Hotels")
+                        }
+                        NavigationLink(destination: PlaceListView(placeType: viewModel.shops, title: "Shops")) {
+                            Text("Shops")
+                        }
+                        
                     }
                 } else if let errorMessage = viewModel.errorMessage {
                     Text(errorMessage)
