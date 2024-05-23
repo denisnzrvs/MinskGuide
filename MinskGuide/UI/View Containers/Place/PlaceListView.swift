@@ -6,17 +6,19 @@ struct PlaceListView: View {
     
     var body: some View {
         List(placeType) { place in
-            VStack(alignment: .leading) {
-                Text(place.name)
-                    .font(.headline)
-                Text(place.address)
-                    .foregroundColor(.secondary)
-                Text(place.recommendation)
-                    .foregroundColor(.secondary)
-                    .font(.footnote)
-                    .padding(.top, 4)
+            NavigationLink(destination: PlaceDetailsView(place: place)) {
+                VStack(alignment: .leading) {
+                    Text(place.name)
+                        .font(.headline)
+                    Text(place.address)
+                        .foregroundColor(.secondary)
+                    Text(place.recommendation)
+                        .foregroundColor(.secondary)
+                        .font(.footnote)
+                        .padding(.top, 4)
+                }
+                .padding(.vertical, 8)
             }
-            .padding(.vertical, 8)
         }
         .navigationTitle(title)
     }

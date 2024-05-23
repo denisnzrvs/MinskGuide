@@ -34,6 +34,7 @@
 		F1E599B32BFDECB500104F83 /* AuthenticationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E599B22BFDECB500104F83 /* AuthenticationViewModel.swift */; };
 		F1E599B52BFDECE700104F83 /* AuthenticationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E599B42BFDECE700104F83 /* AuthenticationView.swift */; };
 		F1E599B72BFDED0C00104F83 /* AuthenticatedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E599B62BFDED0C00104F83 /* AuthenticatedView.swift */; };
+		F1F22EFF2BFF392A00ED9DE2 /* PlaceDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F22EFE2BFF392A00ED9DE2 /* PlaceDetailsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +61,7 @@
 		F1E599B22BFDECB500104F83 /* AuthenticationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewModel.swift; sourceTree = "<group>"; };
 		F1E599B42BFDECE700104F83 /* AuthenticationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationView.swift; sourceTree = "<group>"; };
 		F1E599B62BFDED0C00104F83 /* AuthenticatedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticatedView.swift; sourceTree = "<group>"; };
+		F1F22EFE2BFF392A00ED9DE2 /* PlaceDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceDetailsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +123,7 @@
 			isa = PBXGroup;
 			children = (
 				F1634BC22BFEC11900EFAEFC /* PlaceListView.swift */,
+				F1F22EFE2BFF392A00ED9DE2 /* PlaceDetailsView.swift */,
 			);
 			path = Place;
 			sourceTree = "<group>";
@@ -320,6 +323,7 @@
 				F10D925D2BF24E1D005B2E06 /* MinskGuideApp.swift in Sources */,
 				F1E599B12BFDEC6300104F83 /* LoginView.swift in Sources */,
 				F1E571DD2BFB9EC200B1D36A /* HomeView.swift in Sources */,
+				F1F22EFF2BFF392A00ED9DE2 /* PlaceDetailsView.swift in Sources */,
 				F1E571E42BFBB4AB00B1D36A /* UserRepository.swift in Sources */,
 				F1E571E62BFBB4C400B1D36A /* PlacesRepository.swift in Sources */,
 				F1E571E92BFBB4EC00B1D36A /* User.swift in Sources */,
