@@ -136,13 +136,6 @@
 			path = Search;
 			sourceTree = "<group>";
 		};
-		F1DE99222BFCE0290041843C /* View Components */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "View Components";
-			sourceTree = "<group>";
-		};
 		F1E571D32BFB9D7200B1D36A /* Root */ = {
 			isa = PBXGroup;
 			children = (
@@ -155,7 +148,7 @@
 		F1E571D62BFB9E7400B1D36A /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				F1DE99222BFCE0290041843C /* View Components */,
+				F1F22F022BFF445F00ED9DE2 /* View Components */,
 				F1E571D72BFB9E7C00B1D36A /* View Containers */,
 			);
 			path = UI;
@@ -228,6 +221,13 @@
 				F1E599B62BFDED0C00104F83 /* AuthenticatedView.swift */,
 			);
 			path = Auth;
+			sourceTree = "<group>";
+		};
+		F1F22F022BFF445F00ED9DE2 /* View Components */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "View Components";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

@@ -6,6 +6,13 @@ struct HomeView: View {
     var body: some View {
         NavigationStack {
             VStack {
+                // Displaying the HeroBanner image
+                Image("HeroBanner")
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .frame(height: 200)
+                    .ignoresSafeArea()
+                
                 if !viewModel.places.isEmpty {
                     List {
                         NavigationLink(destination: PlaceListView(placeType: viewModel.restaurants, title: "Restaurants")) {
@@ -20,7 +27,6 @@ struct HomeView: View {
                         NavigationLink(destination: PlaceListView(placeType: viewModel.shops, title: "Shops")) {
                             Text("Shops")
                         }
-                        
                     }
                 } else if let errorMessage = viewModel.errorMessage {
                     Text(errorMessage)
@@ -30,7 +36,6 @@ struct HomeView: View {
                         .progressViewStyle(CircularProgressViewStyle())
                 }
             }
-            .navigationTitle("Places")
         }
     }
 }
