@@ -1,27 +1,34 @@
 import SwiftUI
 
 struct HomeView: View {
-    @StateObject var viewModel = AuthenticationViewModel()
-    @StateObject var homeViewModel = HomeViewModel()
-
+    @StateObject var viewModel = HomeViewModel()
     
     var body: some View {
         NavigationStack {
             VStack {
-                if viewModel.authenticationState == .unauthenticated {
-                    Spacer()
-                    LoginView(viewModel: viewModel)
-                    Spacer()
+                if !viewModel.places.isEmpty {
+                    List(viewModel.places) { place in
+                        VStack(alignment: .leading) {
+                            Text(place.name)
+                                .font(.headline)
+                            Text(place.address)
+                                .foregroundColor(.secondary)
+                            Text(place.recommendation)
+                                .foregroundColor(.secondary)
+                                .font(.footnote)
+                                .padding(.top, 4)
+                        }
+                        .padding(.vertical, 8)
+                    }
+                } else if let errorMessage = viewModel.errorMessage {
+                    Text(errorMessage)
+                        .foregroundColor(.red)
                 } else {
-                    Text("Welcome! You are logged in.")
-                    
+                    ProgressView()
+                        .progressViewStyle(CircularProgressViewStyle())
                 }
             }
-            .navigationTitle("Home")
-            .onAppear {
-                viewModel.registerAuthStateHandler()
-                homeViewModel.loadData()
-            }
+            .navigationTitle("Places")
         }
     }
 }
