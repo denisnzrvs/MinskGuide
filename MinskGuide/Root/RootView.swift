@@ -10,6 +10,7 @@ import SwiftUI
 struct RootView: View {
     @StateObject private var tabController = TabController()
     @StateObject private var authViewModel =  AuthenticationViewModel()
+    @StateObject private var homeViewModel = HomeViewModel()
     
     var body: some View {
         Group {
@@ -19,6 +20,7 @@ struct RootView: View {
                         .tag(Tab.home)
                         .tabItem { Label("Home", systemImage: "house") }
                     SearchView()
+                        .environmentObject(homeViewModel)
                         .tag(Tab.search)
                         .tabItem { Label("Search", systemImage: "magnifyingglass") }
                     FavoritesView()

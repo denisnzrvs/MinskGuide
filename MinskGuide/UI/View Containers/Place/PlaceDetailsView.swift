@@ -3,6 +3,7 @@ import MapKit
 
 struct PlaceDetailsView: View {
     var place: Place
+    @State private var isFavorite: Bool = false
     
     var body: some View {
         NavigationStack {
@@ -15,16 +16,35 @@ struct PlaceDetailsView: View {
                     .font(.title2)
                     .foregroundColor(.secondary)
                 
-                Button(action: {
-                    openInMaps()
-                }) {
-                    Text("Let's drive!")
+                HStack(spacing: 16) {
+                    Button(action: {
+                        openInMaps()
+                    }) {
+                        Text("Let's drive!")
+                            .padding()
+                            .foregroundColor(.blue)
+                            .background(
+                                RoundedRectangle(cornerRadius: 20)
+                                    .stroke(Color.blue, lineWidth: 2)
+                            )
+                    }
+                    
+                    Button(action: {
+                        isFavorite.toggle()
+                        //saveFavoriteStatus() //save favorite places to user repository
+                    }) {
+                        HStack {
+                            Image(systemName: isFavorite ? "heart.fill" : "heart")
+                                .foregroundColor(isFavorite ? .yellow : .gray)
+                            Text(isFavorite ? "Unfavorite" : "Add to Favorites")
+                        }
                         .padding()
                         .foregroundColor(.blue)
                         .background(
                             RoundedRectangle(cornerRadius: 20)
                                 .stroke(Color.blue, lineWidth: 2)
                         )
+                    }
                 }
                 .padding(.top, 8)
                 

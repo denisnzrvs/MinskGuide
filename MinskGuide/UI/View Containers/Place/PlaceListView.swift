@@ -1,25 +1,31 @@
 import SwiftUI
 
 struct PlaceListView: View {
-    var placeType: [Place]
+    @State var placeType: [Place]
     var title: String
     
     var body: some View {
-        List(placeType) { place in
+        List($placeType) { $place in
             NavigationLink(destination: PlaceDetailsView(place: place)) {
                 VStack(alignment: .leading) {
-                    Text(place.name)
-                        .font(.headline)
+                    HStack {
+                        Text(place.name)
+                            .font(.headline)
+                     /*   if place.isFavorite {
+                            Image(systemName: "heart.fill")
+                                .foregroundColor(.red)
+                        } */
+                    }
                     Text(place.address)
                         .foregroundColor(.secondary)
                     Text(place.recommendation)
                         .foregroundColor(.secondary)
                         .font(.footnote)
-                        .padding(.top, 4)
+                        .padding(.top)
                 }
-                .padding(.vertical, 8)
-            }
-        }
-        .navigationTitle(title)
-    }
-}
+                              .padding(.vertical, 8)
+                          }
+                      }
+                      .navigationTitle(title)
+                  }
+              }

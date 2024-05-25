@@ -3,32 +3,39 @@ import SwiftUI
 struct HomeView: View {
     @StateObject var viewModel = HomeViewModel()
     
+    let columns = [
+        GridItem(.flexible()),
+        GridItem(.flexible())
+    ]
+    
     var body: some View {
         NavigationStack {
-            VStack(spacing: 0) { // Set spacing to 0 to remove any extra space
+            VStack(spacing: 0) {
                 // Displaying the HeroBanner image
                 Image("HeroBanner")
                     .resizable()
                     .aspectRatio(contentMode: .fill)
                     .frame(height: 200)
-                    .clipped() // Ensure the image is clipped to its frame
+                    .clipped()
                 
                 if !viewModel.places.isEmpty {
-                    List {
-                        NavigationLink(destination: PlaceListView(placeType: viewModel.restaurants, title: "Restaurants")) {
-                            Text("Restaurants")
+                    ScrollView {
+                        LazyVGrid(columns: columns, spacing: 16) {
+                            NavigationLink(destination: PlaceListView(placeType: viewModel.restaurants, title: "Restaurants")) {
+                                categoryCard(title: "Restaurants", imageName: "restaurantsImage")
+                            }
+                            NavigationLink(destination: PlaceListView(placeType: viewModel.museums, title: "Museums")) {
+                                categoryCard(title: "Museums", imageName: "museumsImage")
+                            }
+                            NavigationLink(destination: PlaceListView(placeType: viewModel.hotels, title: "Hotels")) {
+                                categoryCard(title: "Hotels", imageName: "hotelsImage")
+                            }
+                            NavigationLink(destination: PlaceListView(placeType: viewModel.shops, title: "Shops")) {
+                                categoryCard(title: "Shops", imageName: "shopsImage")
+                            }
                         }
-                        NavigationLink(destination: PlaceListView(placeType: viewModel.museums, title: "Museums")) {
-                            Text("Museums")
-                        }
-                        NavigationLink(destination: PlaceListView(placeType: viewModel.hotels, title: "Hotels")) {
-                            Text("Hotels")
-                        }
-                        NavigationLink(destination: PlaceListView(placeType: viewModel.shops, title: "Shops")) {
-                            Text("Shops")
-                        }
+                        .padding()
                     }
-                    .padding(.top, -8) // Adjust top padding to remove extra space
                 } else if let errorMessage = viewModel.errorMessage {
                     Text(errorMessage)
                         .foregroundColor(.red)
@@ -39,8 +46,31 @@ struct HomeView: View {
                         .padding()
                 }
             }
-            .edgesIgnoringSafeArea([.top, .bottom]) // Ignore safe area for the bottom edge
+            .edgesIgnoringSafeArea([.top, .bottom])
         }
+    }
+    
+    private func categoryCard(title: String, imageName: String) -> some View {
+        ZStack {
+            Image(imageName)
+                .resizable()
+                .aspectRatio(contentMode: .fill)
+                .frame(height: 150)
+                .clipped()
+                .overlay(
+                    LinearGradient(gradient: Gradient(colors: [Color.blue.opacity(0.7), Color.white.opacity(0.3)]), startPoint: .bottom, endPoint: .top)
+                )
+                .cornerRadius(12)
+                .shadow(radius: 5)
+            
+            Text(title)
+                .font(.headline)
+                .foregroundColor(.white)
+                .padding()
+                .background(Color.blue.opacity(0.5))
+                .cornerRadius(8)
+        }
+        .padding(4)
     }
 }
 

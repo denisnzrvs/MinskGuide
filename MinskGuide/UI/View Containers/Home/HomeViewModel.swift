@@ -10,6 +10,7 @@ class HomeViewModel: ObservableObject {
     @Published var hotels: [Place] = []
     @Published var shops: [Place] = []
     @Published var errorMessage: String?
+    @Published var favoritePlaces: [Int: Bool] = [:]
     
     init() {
         loadData()
@@ -110,6 +111,27 @@ class HomeViewModel: ObservableObject {
                 case .failure(let error):
                     self.errorMessage = error.localizedDescription
                     print("Error downloading file: \(error)")
+            }
+        }
+        
+        func toggleFavoriteStatus(for place: Place) {
+               if favoritePlaces[place.id] == true {
+                   favoritePlaces[place.id] = false
+               } else {
+                   favoritePlaces[place.id] = true
+               }
+               saveFavoriteStatus()
+           }
+        
+        func saveFavoriteStatus() {
+                let defaults = UserDefaults.standard
+                defaults.set(favoritePlaces, forKey: "favoritePlaces")
+            }
+            
+        func loadFavoriteStatus() {
+            let defaults = UserDefaults.standard
+            if let favorites = defaults.dictionary(forKey: "favoritePlaces") as? [Int: Bool] {
+                favoritePlaces = favorites
             }
         }
     }
