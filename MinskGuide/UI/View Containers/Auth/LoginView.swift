@@ -1,10 +1,3 @@
-//
-//  LoginView.swift
-//  MinskGuide
-//
-//  Created by Denis Nazarovs on 22/05/2024.
-//
-
 import SwiftUI
 import Combine
 import FirebaseAnalyticsSwift
@@ -38,11 +31,16 @@ struct LoginView: View {
     }
     
     var body: some View {
+        Spacer()
         VStack {
-            Image("Login")
+            Image("loginPicture")
                 .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(minHeight: 300, maxHeight: 400)
+                                .aspectRatio(contentMode: .fill)
+                                .frame(width: 250, height: 300)
+                                .clipShape(RoundedRectangle(cornerRadius: 20))
+                                .overlay(RoundedRectangle(cornerRadius: 20).stroke(Color.white, lineWidth: 4))
+                                .shadow(radius: 10)
+                                .padding(.bottom, 20)
             Text("Login")
                 .font(.largeTitle)
                 .fontWeight(.bold)
