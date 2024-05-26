@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		657475152C037F2B00FD986C /* ProfileImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 657475142C037F2B00FD986C /* ProfileImage.swift */; };
 		659E6F482C0004B20079518F /* UIStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659E6F472C0004B20079518F /* UIStyle.swift */; };
 		F10D925D2BF24E1D005B2E06 /* MinskGuideApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10D925C2BF24E1D005B2E06 /* MinskGuideApp.swift */; };
 		F10D92612BF24E25005B2E06 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F10D92602BF24E25005B2E06 /* Assets.xcassets */; };
@@ -39,6 +40,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		657475142C037F2B00FD986C /* ProfileImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileImage.swift; sourceTree = "<group>"; };
 		659E6F472C0004B20079518F /* UIStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStyle.swift; sourceTree = "<group>"; };
 		F10D92592BF24E1D005B2E06 /* MinskGuide.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MinskGuide.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F10D925C2BF24E1D005B2E06 /* MinskGuideApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinskGuideApp.swift; sourceTree = "<group>"; };
@@ -221,6 +223,7 @@
 				F1E599B02BFDEC6300104F83 /* LoginView.swift */,
 				F1E599B22BFDECB500104F83 /* AuthenticationViewModel.swift */,
 				F1E599B42BFDECE700104F83 /* AuthenticationView.swift */,
+				657475142C037F2B00FD986C /* ProfileImage.swift */,
 				F1E599B62BFDED0C00104F83 /* AuthenticatedView.swift */,
 			);
 			path = Auth;
@@ -334,6 +337,7 @@
 				F1E599B32BFDECB500104F83 /* AuthenticationViewModel.swift in Sources */,
 				F1E599B52BFDECE700104F83 /* AuthenticationView.swift in Sources */,
 				F1634BC02BFEBEFB00EFAEFC /* Place.swift in Sources */,
+				657475152C037F2B00FD986C /* ProfileImage.swift in Sources */,
 				F1E599B72BFDED0C00104F83 /* AuthenticatedView.swift in Sources */,
 				F1E571D22BFB9C6A00B1D36A /* RootView.swift in Sources */,
 			);
