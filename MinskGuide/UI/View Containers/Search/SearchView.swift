@@ -63,7 +63,9 @@ struct SearchView: View {
     }
     
     func performSearch() {
-        searchResults = homeViewModel.places.filter { $0.name.localizedCaseInsensitiveContains(searchText) }
+        withAnimation {
+            searchResults = homeViewModel.places.filter { $0.name.localizedCaseInsensitiveContains(searchText) }
+        }
     }
 }
 
