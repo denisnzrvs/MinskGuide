@@ -16,7 +16,6 @@ class TabController: ObservableObject {
 
 enum Tab {
     case home
-    case favorites
     case settings
     case search
 }
