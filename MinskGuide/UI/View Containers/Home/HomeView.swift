@@ -11,11 +11,11 @@ struct HomeView: View {
     var body: some View {
         NavigationStack {
             VStack(spacing: 0) {
-                // Displaying the HeroBanner image
                 Image("HeroBanner")
                     .resizable()
                     .aspectRatio(contentMode: .fill)
                     .frame(height: 200)
+                    .cornerRadius(40)
                     .clipped()
                 
                 if !viewModel.places.isEmpty {
