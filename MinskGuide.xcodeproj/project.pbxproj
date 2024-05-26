@@ -24,7 +24,6 @@
 		F1E571D22BFB9C6A00B1D36A /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E571D12BFB9C6A00B1D36A /* RootView.swift */; };
 		F1E571D52BFB9D8800B1D36A /* TabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E571D42BFB9D8800B1D36A /* TabController.swift */; };
 		F1E571DD2BFB9EC200B1D36A /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E571DC2BFB9EC200B1D36A /* HomeView.swift */; };
-		F1E571DF2BFB9ED500B1D36A /* FavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E571DE2BFB9ED500B1D36A /* FavoritesView.swift */; };
 		F1E571E12BFB9EEB00B1D36A /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E571E02BFB9EEB00B1D36A /* SettingsView.swift */; };
 		F1E571E42BFBB4AB00B1D36A /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E571E32BFBB4AA00B1D36A /* UserRepository.swift */; };
 		F1E571E62BFBB4C400B1D36A /* PlacesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E571E52BFBB4C400B1D36A /* PlacesRepository.swift */; };
@@ -52,7 +51,6 @@
 		F1E571D12BFB9C6A00B1D36A /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		F1E571D42BFB9D8800B1D36A /* TabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabController.swift; sourceTree = "<group>"; };
 		F1E571DC2BFB9EC200B1D36A /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
-		F1E571DE2BFB9ED500B1D36A /* FavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesView.swift; sourceTree = "<group>"; };
 		F1E571E02BFB9EEB00B1D36A /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		F1E571E32BFBB4AA00B1D36A /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
 		F1E571E52BFBB4C400B1D36A /* PlacesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesRepository.swift; sourceTree = "<group>"; };
@@ -164,7 +162,6 @@
 				F1E599AB2BFDEBF000104F83 /* Auth */,
 				F1DE991F2BFCDF2D0041843C /* Search */,
 				F1E571DB2BFB9EAB00B1D36A /* Settings */,
-				F1E571DA2BFB9EA300B1D36A /* Favorites */,
 				F1E571D92BFB9E9B00B1D36A /* Home */,
 			);
 			path = "View Containers";
@@ -177,14 +174,6 @@
 				F1BFA6552BFD0E00006FA09D /* HomeViewModel.swift */,
 			);
 			path = Home;
-			sourceTree = "<group>";
-		};
-		F1E571DA2BFB9EA300B1D36A /* Favorites */ = {
-			isa = PBXGroup;
-			children = (
-				F1E571DE2BFB9ED500B1D36A /* FavoritesView.swift */,
-			);
-			path = Favorites;
 			sourceTree = "<group>";
 		};
 		F1E571DB2BFB9EAB00B1D36A /* Settings */ = {
@@ -322,7 +311,6 @@
 				F1E571D52BFB9D8800B1D36A /* TabController.swift in Sources */,
 				F1E599AF2BFDEC4300104F83 /* UserProfileView.swift in Sources */,
 				F1634BC32BFEC11900EFAEFC /* PlaceListView.swift in Sources */,
-				F1E571DF2BFB9ED500B1D36A /* FavoritesView.swift in Sources */,
 				F10D925D2BF24E1D005B2E06 /* MinskGuideApp.swift in Sources */,
 				F1E599B12BFDEC6300104F83 /* LoginView.swift in Sources */,
 				F1E571DD2BFB9EC200B1D36A /* HomeView.swift in Sources */,
