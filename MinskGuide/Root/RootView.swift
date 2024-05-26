@@ -23,7 +23,10 @@ struct RootView: View {
                         .environmentObject(homeViewModel)
                         .tag(Tab.search)
                         .tabItem { Label("Search", systemImage: "magnifyingglass") }
-                   SettingsView()
+                    FavoritesView()
+                        .tag(Tab.favorites)
+                        .tabItem { Label("Favorites", systemImage: "star") }
+                    SettingsView()
                         .tag(Tab.settings)
                         .tabItem { Label("Settings", systemImage: "gearshape") }
                 }
