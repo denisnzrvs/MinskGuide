@@ -8,13 +8,12 @@ struct VideoPlayerView: UIViewRepresentable {
     func makeUIView(context: Context) -> VideoPlayerUIView {
         return VideoPlayerUIView(frame: .zero, player: player, didTapFullScreen: didTapFullScreen)
     }
-
+    
     func updateUIView(_ uiView: VideoPlayerUIView, context: Context) {
-        // No update needed
     }
-
+    
     typealias UIViewType = VideoPlayerUIView
-
+    
     class VideoPlayerUIView: UIView {
         private let playerLayer = AVPlayerLayer()
         private var player: AVPlayer?
@@ -28,30 +27,34 @@ struct VideoPlayerView: UIViewRepresentable {
             backgroundColor = .black
             playerLayer.player = player
             layer.addSublayer(playerLayer)
-
+            
             let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTap))
             addGestureRecognizer(tapGesture)
+                        
+            player.volume = 1.0
+            
+            configureAudioSession()
         }
-
+        
         required init?(coder: NSCoder) {
             fatalError("init(coder:) has not been implemented")
         }
-
+        
         override func layoutSubviews() {
             super.layoutSubviews()
             playerLayer.frame = bounds
         }
-
+        
         func play() {
             player?.play()
             isPlaying = true
         }
-
+        
         func pause() {
             player?.pause()
             isPlaying = false
         }
-
+        
         @objc private func handleTap() {
             if isPlaying {
                 pause()
@@ -63,5 +66,31 @@ struct VideoPlayerView: UIViewRepresentable {
                 }
             }
         }
+        
+        private func configureAudioSession() {
+            do {
+                try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
+                try AVAudioSession.sharedInstance().setActive(true)
+            } catch {
+                print("Failed to set up audio session: \(error)")
+            }
+        }
+    }
+}
+
+struct ContentView: View {
+    var body: some View {
+        VStack {
+            VideoPlayerView(player: loadVideo(), didTapFullScreen: nil)
+                .frame(height: 300)
+        }
+    }
+    
+    func loadVideo() -> AVPlayer {
+        guard let path = Bundle.main.path(forResource: "MinskTravelApp", ofType: "mp4") else {
+            fatalError("Video file not found")
+        }
+        let url = URL(fileURLWithPath: path)
+        return AVPlayer(url: url)
     }
 }
