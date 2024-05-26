@@ -2,13 +2,15 @@ import SwiftUI
 
 struct SearchView: View {
     @State private var searchText: String = ""
-    @State private var searchResults: [String] = []
+    @State private var searchResults: [Place] = []
+    @EnvironmentObject var homeViewModel: HomeViewModel
+
     
     var body: some View {
         NavigationStack {
             VStack {
                 HStack {
-                    TextField("Search for destinations", text: $searchText)
+                    TextField("Search for destinations", text: $searchText, onCommit: performSearch)
                         .padding(7)
                         .background(Color(.systemGray6))
                         .cornerRadius(8)
@@ -28,9 +30,9 @@ struct SearchView: View {
                 .padding(.top, 10)
                 
                 List {
-                    ForEach(searchResults, id: \.self) { result in
-                        NavigationLink(destination: Text("Details for \(result)")) {
-                            Text(result)
+                    ForEach(searchResults) { place in
+                        NavigationLink(destination: PlaceDetailsView(place: place)) {
+                            PlaceCardView(place: place)
                         }
                     }
                 }
@@ -38,14 +40,33 @@ struct SearchView: View {
             }
             .navigationTitle("Search")
         }
+        .onAppear {
+            
+            searchResults = homeViewModel.places
+        }
     }
     
     func performSearch() {
-        searchResults = ["Result 1", "Result 2", "Result 3"].filter { $0.localizedCaseInsensitiveContains(searchText) }
+        searchResults = homeViewModel.places.filter { $0.name.localizedCaseInsensitiveContains(searchText) }
     }
 }
 
-#Preview {
-    SearchView()
+struct PlaceCardView: View {
+    let place: Place
+    
+    var body: some View {
+        VStack(alignment: .leading) {
+            Text(place.name)
+                .font(.headline)
+            Text(place.address)
+                .foregroundColor(.secondary)
+            Text(place.recommendation)
+                .foregroundColor(.secondary)
+                .font(.footnote)
+                .padding(.top, 4)
+        }
+        .padding(.vertical, 8)
+    }
 }
+
 

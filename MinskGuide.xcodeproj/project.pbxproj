@@ -11,6 +11,8 @@
 		F10D925D2BF24E1D005B2E06 /* MinskGuideApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10D925C2BF24E1D005B2E06 /* MinskGuideApp.swift */; };
 		F10D92612BF24E25005B2E06 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F10D92602BF24E25005B2E06 /* Assets.xcassets */; };
 		F10D92642BF24E25005B2E06 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F10D92632BF24E25005B2E06 /* Preview Assets.xcassets */; };
+		F1634BC02BFEBEFB00EFAEFC /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1634BBF2BFEBEFB00EFAEFC /* Place.swift */; };
+		F1634BC32BFEC11900EFAEFC /* PlaceListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1634BC22BFEC11900EFAEFC /* PlaceListView.swift */; };
 		F1BFA6142BFD070F006FA09D /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = F1BFA6132BFD070F006FA09D /* FirebaseAnalytics */; };
 		F1BFA6182BFD070F006FA09D /* FirebaseAnalyticsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = F1BFA6172BFD070F006FA09D /* FirebaseAnalyticsSwift */; };
 		F1BFA6202BFD070F006FA09D /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = F1BFA61F2BFD070F006FA09D /* FirebaseAuth */; };
@@ -33,6 +35,7 @@
 		F1E599B32BFDECB500104F83 /* AuthenticationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E599B22BFDECB500104F83 /* AuthenticationViewModel.swift */; };
 		F1E599B52BFDECE700104F83 /* AuthenticationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E599B42BFDECE700104F83 /* AuthenticationView.swift */; };
 		F1E599B72BFDED0C00104F83 /* AuthenticatedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E599B62BFDED0C00104F83 /* AuthenticatedView.swift */; };
+		F1F22EFF2BFF392A00ED9DE2 /* PlaceDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F22EFE2BFF392A00ED9DE2 /* PlaceDetailsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +44,8 @@
 		F10D925C2BF24E1D005B2E06 /* MinskGuideApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinskGuideApp.swift; sourceTree = "<group>"; };
 		F10D92602BF24E25005B2E06 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F10D92632BF24E25005B2E06 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		F1634BBF2BFEBEFB00EFAEFC /* Place.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
+		F1634BC22BFEC11900EFAEFC /* PlaceListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceListView.swift; sourceTree = "<group>"; };
 		F1BFA6512BFD0B64006FA09D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F1BFA6552BFD0E00006FA09D /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		F1DE99202BFCDF520041843C /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
@@ -58,6 +63,7 @@
 		F1E599B22BFDECB500104F83 /* AuthenticationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewModel.swift; sourceTree = "<group>"; };
 		F1E599B42BFDECE700104F83 /* AuthenticationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationView.swift; sourceTree = "<group>"; };
 		F1E599B62BFDED0C00104F83 /* AuthenticatedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticatedView.swift; sourceTree = "<group>"; };
+		F1F22EFE2BFF392A00ED9DE2 /* PlaceDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceDetailsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,19 +121,21 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		F1634BC12BFEC10B00EFAEFC /* Place */ = {
+			isa = PBXGroup;
+			children = (
+				F1634BC22BFEC11900EFAEFC /* PlaceListView.swift */,
+				F1F22EFE2BFF392A00ED9DE2 /* PlaceDetailsView.swift */,
+			);
+			path = Place;
+			sourceTree = "<group>";
+		};
 		F1DE991F2BFCDF2D0041843C /* Search */ = {
 			isa = PBXGroup;
 			children = (
 				F1DE99202BFCDF520041843C /* SearchView.swift */,
 			);
 			path = Search;
-			sourceTree = "<group>";
-		};
-		F1DE99222BFCE0290041843C /* View Components */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "View Components";
 			sourceTree = "<group>";
 		};
 		F1E571D32BFB9D7200B1D36A /* Root */ = {
@@ -142,7 +150,7 @@
 		F1E571D62BFB9E7400B1D36A /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				F1DE99222BFCE0290041843C /* View Components */,
+				F1F22F022BFF445F00ED9DE2 /* View Components */,
 				F1E571D72BFB9E7C00B1D36A /* View Containers */,
 				659E6F472C0004B20079518F /* UIStyle.swift */,
 			);
@@ -152,6 +160,7 @@
 		F1E571D72BFB9E7C00B1D36A /* View Containers */ = {
 			isa = PBXGroup;
 			children = (
+				F1634BC12BFEC10B00EFAEFC /* Place */,
 				F1E599AB2BFDEBF000104F83 /* Auth */,
 				F1DE991F2BFCDF2D0041843C /* Search */,
 				F1E571DB2BFB9EAB00B1D36A /* Settings */,
@@ -199,6 +208,7 @@
 			isa = PBXGroup;
 			children = (
 				F1E571E82BFBB4EC00B1D36A /* User.swift */,
+				F1634BBF2BFEBEFB00EFAEFC /* Place.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -214,6 +224,13 @@
 				F1E599B62BFDED0C00104F83 /* AuthenticatedView.swift */,
 			);
 			path = Auth;
+			sourceTree = "<group>";
+		};
+		F1F22F022BFF445F00ED9DE2 /* View Components */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "View Components";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -304,16 +321,19 @@
 				F1E571E12BFB9EEB00B1D36A /* SettingsView.swift in Sources */,
 				F1E571D52BFB9D8800B1D36A /* TabController.swift in Sources */,
 				F1E599AF2BFDEC4300104F83 /* UserProfileView.swift in Sources */,
+				F1634BC32BFEC11900EFAEFC /* PlaceListView.swift in Sources */,
 				F1E571DF2BFB9ED500B1D36A /* FavoritesView.swift in Sources */,
 				F10D925D2BF24E1D005B2E06 /* MinskGuideApp.swift in Sources */,
 				F1E599B12BFDEC6300104F83 /* LoginView.swift in Sources */,
 				F1E571DD2BFB9EC200B1D36A /* HomeView.swift in Sources */,
+				F1F22EFF2BFF392A00ED9DE2 /* PlaceDetailsView.swift in Sources */,
 				F1E571E42BFBB4AB00B1D36A /* UserRepository.swift in Sources */,
 				659E6F482C0004B20079518F /* UIStyle.swift in Sources */,
 				F1E571E62BFBB4C400B1D36A /* PlacesRepository.swift in Sources */,
 				F1E571E92BFBB4EC00B1D36A /* User.swift in Sources */,
 				F1E599B32BFDECB500104F83 /* AuthenticationViewModel.swift in Sources */,
 				F1E599B52BFDECE700104F83 /* AuthenticationView.swift in Sources */,
+				F1634BC02BFEBEFB00EFAEFC /* Place.swift in Sources */,
 				F1E599B72BFDED0C00104F83 /* AuthenticatedView.swift in Sources */,
 				F1E571D22BFB9C6A00B1D36A /* RootView.swift in Sources */,
 			);
