@@ -4,30 +4,48 @@ struct SearchView: View {
     @State private var searchText: String = ""
     @State private var searchResults: [Place] = []
     @EnvironmentObject var homeViewModel: HomeViewModel
-
     
     var body: some View {
         NavigationStack {
-            VStack {
-                HStack {
-                    TextField("Search for destinations", text: $searchText, onCommit: performSearch)
-                        .padding(7)
-                        .background(Color(.systemGray6))
-                        .cornerRadius(8)
-                        .padding(.horizontal, 10)
+            VStack(spacing: 0) {
+                Image("SearchImage")
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .frame(height: 200)
+                    .cornerRadius(40)
+                    .clipped()
+                    .edgesIgnoringSafeArea([.top, .bottom])
+                
+                VStack(spacing: 0) {
+                    Text("Search")
+                        .font(.largeTitle)
+                        .fontWeight(.bold)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .padding(.horizontal)
+                        .padding(.top, 10)
                     
-                    Button(action: {
-                        performSearch()
-                    }) {
-                        Text("Search")
-                            .foregroundColor(.white)
+                    HStack {
+                        TextField("Search for destinations", text: $searchText, onCommit: performSearch)
                             .padding(7)
-                            .background(Color.blue)
-                            .cornerRadius(8)
+                            .background(Color(.systemGray6))
+                            .cornerRadius(20)
+                            .padding(.horizontal, 10)
+                        
+                        Button(action: {
+                            performSearch()
+                        }) {
+                            Image(systemName: "magnifyingglass")
+                                .foregroundColor(.white)
+                                .padding(7)
+                                .background(Color.blue)
+                                .cornerRadius(20)
+                        }
+                        .padding(.trailing, 10)
                     }
-                    .padding(.trailing, 10)
+                    .padding()
                 }
-                .padding(.top, 10)
+                .background(Color.white) // Set background color to avoid transparency over the image
+                .padding(.top, -50)
                 
                 List {
                     ForEach(searchResults) { place in
@@ -38,10 +56,8 @@ struct SearchView: View {
                 }
                 .listStyle(PlainListStyle())
             }
-            .navigationTitle("Search")
         }
         .onAppear {
-            
             searchResults = homeViewModel.places
         }
     }
@@ -68,5 +84,3 @@ struct PlaceCardView: View {
         .padding(.vertical, 8)
     }
 }
-
-
